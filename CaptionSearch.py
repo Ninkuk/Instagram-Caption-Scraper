@@ -16,7 +16,7 @@ def get_user_requirements():
 # scrolls through the user page and gathers all the posts' links
 def get_links(url, string_to_search):
     links = []
-    browser = webdriver.Chrome('C:\\Users\\Ninkuk\\Desktop\\chromedriver_win32\\chromedriver')
+    browser = webdriver.Chrome()
     browser.get(url)
     last_height = browser.execute_script("return document.body.scrollHeight")
     while True:
@@ -53,7 +53,7 @@ def get_links(url, string_to_search):
 # this searches the string in the caption of all the posts
 def filter_captions(links, string_to_search):
     filtered_links = []
-    browser = webdriver.Chrome('C:\\Users\\Ninkuk\\Desktop\\chromedriver_win32\\chromedriver')
+    browser = webdriver.Chrome()
     for link in links:
         browser.get(link)
         source = browser.page_source
